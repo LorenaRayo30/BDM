@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.routes import Upload, Manipulation
+from app.routes import Upload, Manipulation, Consult
 
 app = FastAPI(
     title="XM ApiRestful",
@@ -13,3 +13,5 @@ app = FastAPI(
 app.include_router(Upload.router, prefix="/Upload", tags=["Cargar datos"])
 
 app.include_router(Manipulation.router, prefix="/Manipulation", tags=["Manipulación de los datos"])
+
+app.include_router(Consult.router, prefix="/Consults", tags=["Manipulación de los datos"])
